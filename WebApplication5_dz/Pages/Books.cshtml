@@ -1,0 +1,31 @@
+﻿@page
+@model WebApplication5_dz.Pages.BooksModel
+@{
+
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model.Books)
+        {
+            <tr>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.Genere</td>
+            <td>@book.Publisher</td>
+            <td>@book.YearOfPublishing</td>
+            <td><a asp-page="./Details" asp-route-id="@book.Id">Details</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
